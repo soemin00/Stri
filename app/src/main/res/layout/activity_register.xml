@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Register">
+    tools:context="com.example.striwomensafety.RegisterActivity">
 
 
+<!-- Sign Up Title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07"/>
 
-
+    <!-- Full Name EditText -->
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -31,17 +32,16 @@
         android:ems="10"
         android:hint="Full Name"
         android:inputType="textPersonName"
-        android:padding="10dp"
+        android:padding="20dp"
         android:textColorHint="#D8D4D4"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signup"
-        app:layout_constraintVertical_bias="0.09"
         android:textColor="#FFF"/>
 
-
+    <!-- Email EditText -->
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
         android:ems="10"
         android:hint="Email "
         android:inputType="textPersonName"
-        android:padding="10dp"
+        android:padding="20dp"
         android:textColorHint="#D8D4D4"
         android:textSize="20dp"
         android:layout_marginTop="16dp"
@@ -60,6 +60,7 @@
         app:layout_constraintTop_toBottomOf="@id/username"
         android:textColor="#FFF"/>
 
+    <!-- Password EditText -->
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -69,7 +70,7 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:padding="10dp"
+        android:padding="20dp"
         android:textColorHint="#D8D4D4"
         android:textSize="20dp"
         android:layout_marginTop="16dp"
@@ -78,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/email"
         android:textColor="#FFF"/>
 
+    <!-- Confirm Password EditText -->
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -87,7 +89,7 @@
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
-        android:padding="10dp"
+        android:padding="20dp"
         android:textColorHint="#D8D4D4"
         android:textSize="20dp"
         android:layout_marginTop="16dp"
@@ -95,7 +97,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password"
         android:textColor="#FFF"/>
-    
+
+    <!-- Register Button -->
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="0dp"
@@ -110,25 +113,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/confirm_password"/>
 
-
-
-
-
+    <!-- Or Sign Up With Text -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/others"
         android:text="Or Sign Up With"
-        android:layout_above="@id/social_icons"
-        android:layout_margin="40dp"
-        android:textColor="#FFF"
-        android:textStyle="bold"
+        android:layout_marginTop="65dp"
+        android:textColor="@color/black"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/registerBtn"
         android:textSize="20dp"
         tools:ignore="HardcodedText" />
 
+    <!-- Social Media Icons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -140,28 +140,30 @@
         android:layout_marginBottom="20dp"
         android:gravity="center">
 
+        <!-- Facebook Icon -->
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_margin="18dp"
-            android:src="@drawable/facebook"/>
+            android:src="@drawable/fb"
+            android:id="@+id/fb"/>
 
+        <!-- Google Icon -->
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_margin="18dp"
-            android:src="@drawable/instagram"/>
+            android:src="@drawable/google_new"
+            android:id="@+id/google_new"/>
 
+        <!-- WhatsApp Icon -->
         <ImageView
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_margin="18dp"
-            android:src="@drawable/whatsapp"/>
-
+            android:src="@drawable/whatsapp"
+            android:id="@+id/whatsapp"/>
     </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
