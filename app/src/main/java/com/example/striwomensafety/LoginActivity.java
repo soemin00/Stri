@@ -8,8 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -24,11 +31,14 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView twitterImageView;
     private ImageView googleImageView;
 
+    FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        auth = FirebaseAuth.getInstance();
         // Finding Views
         signInTextView = findViewById(R.id.signin);
         usernameEditText = findViewById(R.id.username);
@@ -36,9 +46,9 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginbutton);
         forgotPasswordTextView = findViewById(R.id.forgotPassword);
         orSignInWithTextView = findViewById(R.id.orSignInWith);
-        facebookImageView = findViewById(R.id.facebookImage);
-        twitterImageView = findViewById(R.id.whatsappImage);
-        googleImageView = findViewById(R.id.googleImage);
+        facebookImageView = findViewById(R.id.facebook_btn);
+        twitterImageView = findViewById(R.id.whatsapp_btn);
+        googleImageView = findViewById(R.id.google_btn);
 
         // Setting Click Listeners
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -69,34 +79,49 @@ public class LoginActivity extends AppCompatActivity {
 
     // Method to handle user login
     private void loginUser(String username, String password) {
-        showToast("Logging in with Username: " + username + ", Password: " + password);
-        // Your login logic goes here
+        auth.signInWithEmailAndPassword(username, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = auth.getCurrentUser();
+                            showToast("Login successful. Welcome, " + user.getEmail());
+                            Intent intent = new Intent(LoginActivity.this, EmergencyButton.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Exception exception = task.getException();
+                            if (exception != null) {
+                                showToast("Login failed: " + exception.getMessage());
+                            } else {
+                                showToast("Login failed. Please check your credentials.");
+                            }
+                        }
+                    }
+                });
+    }
 
-        // Assuming login is successful, you can finish the LoginActivity
+    private void navigateToEmergencyButton() {
+        Intent intent = new Intent(LoginActivity.this, EmergencyButton.class);
+        startActivity(intent);
         finish();
     }
+
 
     // Method to handle "Forgot Password" action
     public void forgotPasswordClicked(View view) {
         showToast("Forgot Password clicked");
 
         // TODO: Add your forgot password logic here
-        // For example, you can launch a new activity for password recovery or show a dialog.
-        // Intent forgotPasswordIntent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-        // startActivity(forgotPasswordIntent);
+
     }
 
-    // Method to handle "Sign Up" action
     public void signUpClicked(View view) {
         showToast("Sign Up clicked");
-
-        // TODO: Add your sign-up logic here
-        // For example, you can launch the SignUpActivity
         Intent signUpIntent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(signUpIntent);
     }
 
-    // Utility method to display Toast messages
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
