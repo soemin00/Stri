@@ -105,7 +105,7 @@
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:id="@+id/facebookImage"
+            android:id="@+id/facebook_btn"
             android:src="@drawable/fb"
             android:contentDescription="Facebook"
             android:layout_marginEnd="30dp"
@@ -115,7 +115,7 @@
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:id="@+id/whatsappImage"
+            android:id="@+id/whatsapp_btn"
             android:src="@drawable/whatsapp"
             android:contentDescription="Whatsapp"
             android:layout_marginEnd="30dp"
@@ -125,7 +125,7 @@
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:id="@+id/googleImage"
+            android:id="@+id/google_btn"
             android:src="@drawable/google_new"
             android:contentDescription="Google"
             />
