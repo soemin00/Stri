@@ -7,163 +7,121 @@
     android:background="@drawable/background"
     tools:context="com.example.striwomensafety.RegisterActivity">
 
+    <!-- Sign Up Title -->
 
-<!-- Sign Up Title -->
+    <!-- Full Name EditText -->
+
     <TextView
+        android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:id="@+id/signup"
+        android:layout_marginTop="75dp"
         android:textColor="#FFF"
         android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"/>
+        app:layout_constraintVertical_bias="0.5" />
 
-    <!-- Full Name EditText -->
     <EditText
+        android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Full Name"
         android:inputType="textPersonName"
         android:padding="20dp"
         android:textColorHint="#D8D4D4"
         android:textSize="20dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signup"
-        android:textColor="#FFF"/>
+        android:textColor="#FFF" />
 
     <!-- Email EditText -->
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/email"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Email "
-        android:inputType="textPersonName"
-        android:padding="20dp"
-        android:textColorHint="#D8D4D4"
-        android:textSize="20dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username"
-        android:textColor="#FFF"/>
 
     <!-- Password EditText -->
+
+    <!-- Confirm Password EditText -->
+
+    <!-- Register Button -->
     <EditText
+        android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:padding="20dp"
+        android:textColor="#FFF"
+        android:textColorHint="#D8D4D4"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="20dp"
+        android:textColor="#FFF"
         android:textColorHint="#D8D4D4"
         android:textSize="20dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email"
-        android:textColor="#FFF"/>
+        app:layout_constraintTop_toBottomOf="@id/email" />
 
-    <!-- Confirm Password EditText -->
     <EditText
+        android:id="@+id/confirm_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/confirm_password"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:padding="20dp"
+        android:textColor="#FFF"
         android:textColorHint="#D8D4D4"
         android:textSize="20dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password"
-        android:textColor="#FFF"/>
+        app:layout_constraintTop_toBottomOf="@id/password" />
 
-    <!-- Register Button -->
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="50dp"
+        android:padding="10dp"
         android:text="REGISTER"
         android:textSize="20sp"
-        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirm_password"/>
+        app:layout_constraintTop_toBottomOf="@id/confirm_password" />
 
-    <!-- Or Sign Up With Text -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/others"
-        android:text="Or Sign Up With"
-        android:layout_marginTop="65dp"
-        android:textColor="@color/black"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/registerBtn"
-        android:textSize="20dp"
-        tools:ignore="HardcodedText" />
-
-    <!-- Social Media Icons -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/social_icons"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/others"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center">
-
-        <!-- Facebook Icon -->
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_margin="18dp"
-            android:src="@drawable/fb"
-            android:id="@+id/fb"/>
-
-        <!-- Google Icon -->
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_margin="18dp"
-            android:src="@drawable/google_new"
-            android:id="@+id/google_new"/>
-
-        <!-- WhatsApp Icon -->
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_margin="18dp"
-            android:src="@drawable/whatsapp"
-            android:id="@+id/whatsapp"/>
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

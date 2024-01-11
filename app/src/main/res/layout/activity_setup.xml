@@ -1,38 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<EditText
-    android:id="@+id/contact1EditText"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Emergency Contact 1"
-    android:inputType="phone" />
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.striwomensafety.RegisterActivity">
 
-<EditText
-    android:id="@+id/contact2EditText"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/contact1EditText"
-    android:layout_marginTop="16dp"
-    android:hint="Emergency Contact 2"
-    android:inputType="phone" />
+    <EditText
+        android:id="@+id/contact1EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Emergency Contact 1"
+        android:inputType="phone"
+        android:textColorHint="#A9A9A9"
+        android:textColor="#000000"
+        android:padding="16dp"
+        android:textSize="16sp" />
 
-<EditText
-    android:id="@+id/contact3EditText"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/contact2EditText"
-    android:layout_marginTop="16dp"
-    android:hint="Emergency Contact 3"
-    android:inputType="phone" />
+    <EditText
+        android:id="@+id/contact2EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contact1EditText"
+        android:layout_marginTop="16dp"
+        android:hint="Emergency Contact 2"
+        android:inputType="phone"
+        android:textColorHint="#A9A9A9"
+        android:textColor="#000000"
+        android:padding="16dp"
+        android:textSize="16sp" />
 
-<Button
-    android:id="@+id/saveButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/contact3EditText"
-    android:layout_marginTop="24dp"
-    android:text="Save" />
+    <EditText
+        android:id="@+id/contact3EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contact2EditText"
+        android:layout_marginTop="16dp"
+        android:hint="Emergency Contact 3"
+        android:inputType="phone"
+        android:textColorHint="#A9A9A9"
+        android:textColor="#000000"
+        android:padding="16dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contact3EditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="#3498db"
+        android:paddingStart="24dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="12dp"
+        android:radius="50dp"
+        android:text="Save"
+        android:textColor="#212121"
+        android:textSize="18sp" />
+
+
 </RelativeLayout>

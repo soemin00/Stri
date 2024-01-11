@@ -47,12 +47,6 @@ public class RegisterActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
         confirmPasswordEditText = findViewById(R.id.confirm_password);
         registerButton = findViewById(R.id.registerBtn);
-        orSignUpWithTextView = findViewById(R.id.others);
-
-        View socialIconsContainer = findViewById(R.id.social_icons);
-        facebookImageView = socialIconsContainer.findViewById(R.id.fb);
-        googleImageView = socialIconsContainer.findViewById(R.id.google_new);
-        whatsappImageView = socialIconsContainer.findViewById(R.id.whatsapp);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         }
                     });
+
         } else {
             showToast("Passwords do not match");
         }

@@ -39,16 +39,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         auth = FirebaseAuth.getInstance();
+
         // Finding Views
         signInTextView = findViewById(R.id.signin);
         usernameEditText = findViewById(R.id.username);
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginbutton);
         forgotPasswordTextView = findViewById(R.id.forgotPassword);
-        orSignInWithTextView = findViewById(R.id.orSignInWith);
-        facebookImageView = findViewById(R.id.facebook_btn);
-        twitterImageView = findViewById(R.id.whatsapp_btn);
-        googleImageView = findViewById(R.id.google_btn);
 
         // Setting Click Listeners
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +72,13 @@ public class LoginActivity extends AppCompatActivity {
                 signUpClicked(view);
             }
         });
+
+        // Check if the user is already logged in
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if (currentUser != null) {
+            // User is already logged in, navigate to the main activity
+            navigateToEmergencyButton();
+        }
     }
 
     // Method to handle user login
@@ -86,9 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = auth.getCurrentUser();
                             showToast("Login successful. Welcome, " + user.getEmail());
-                            Intent intent = new Intent(LoginActivity.this, EmergencyButton.class);
-                            startActivity(intent);
-                            finish();
+                            navigateToEmergencyButton();
                         } else {
                             Exception exception = task.getException();
                             if (exception != null) {
@@ -106,7 +108,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
 
     // Method to handle "Forgot Password" action
     public void forgotPasswordClicked(View view) {
