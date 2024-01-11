@@ -1,14 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background"
-    tools:context="com.example.striwomensafety.LoginActivity"
-    >
+    tools:context="com.example.striwomensafety.LoginActivity">
 
     <!-- Sign In Text -->
     <TextView
@@ -19,7 +16,7 @@
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
-        android:layout_margin="50dp"
+        android:layout_marginTop="75dp"
         android:gravity="center" />
 
     <!-- Username EditText -->
@@ -59,8 +56,7 @@
         android:backgroundTint="#60FFCCFF"
         android:id="@+id/loginbutton"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        />
+        android:layout_margin="20dp" />
 
     <!-- Forgot Password Text -->
     <LinearLayout
@@ -80,57 +76,6 @@
             android:layout_marginTop="10dp"/>
     </LinearLayout>
 
-    <!-- Or Sign In With Text -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/orSignInWith"
-        android:text="Or Sign In With"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
-
-    <!-- Social Media Buttons -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center">
-
-        <!-- Facebook Button -->
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:id="@+id/facebook_btn"
-            android:src="@drawable/fb"
-            android:contentDescription="Facebook"
-            android:layout_marginEnd="30dp"
-            />
-
-        <!-- Whatsapp Button -->
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:id="@+id/whatsapp_btn"
-            android:src="@drawable/whatsapp"
-            android:contentDescription="Whatsapp"
-            android:layout_marginEnd="30dp"
-            />
-
-        <!-- Google Button -->
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:id="@+id/google_btn"
-            android:src="@drawable/google_new"
-            android:contentDescription="Google"
-            />
-    </LinearLayout>
-
     <!-- Sign Up Message -->
     <TextView
         android:layout_width="wrap_content"
@@ -144,9 +89,6 @@
         android:onClick="signUpClicked"
         android:padding="8dp"
         android:minHeight="48dp"
-        android:minWidth="48dp"
-        />
-
-
+        android:minWidth="48dp" />
 
 </LinearLayout>
